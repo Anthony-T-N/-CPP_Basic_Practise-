@@ -2,23 +2,29 @@
 //
 
 // Used for Input/output.
+// Preprocessor statement, occures before compilation.
 #include <iostream>
 
 // Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
+// Obviously the entry point (main function).
+// Main function special case, return type for main is "int". But will assume 0 is being returned when nothing is returned.
 int main()
 {
-    // Write to console.
-    std::cout << "Hello World!\n";
+    // Write to console (Printing).
+    std::cout << "Hello World!" << std::endl;
     std::cout << "1\n";
     std::cout << "2\n";
     std::cout << "3\n";
     std::cout << "\n";
+    // Pause program's execution on this line utill we press enter.
+    std::cin.get();
     
-    int aint = 123;
-    std::cout << aint;
+    int anint = 123;
+    std::cout << anint;
     std::string astring = "Test";
     std::cout << astring;
     std::cout << "\n";
+    std::cin.get();
 
     for (int i = 0; i <= 10; i++)
     {

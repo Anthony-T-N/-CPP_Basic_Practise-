@@ -20,7 +20,9 @@ int main()
     std::cin.get();
     
     int anint = 123;
-    std::cout << anint;
+    std::cout << anint << "\n";
+    int sum = anint + anint;
+    std::cout << sum << std::endl;
     std::string astring = "Test";
     std::cout << astring;
     std::cout << "\n";

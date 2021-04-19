@@ -5,17 +5,24 @@
 // Preprocessor statement, occures before compilation.
 #include <iostream>
 
-// Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
-// Obviously the entry point (main function).
-// Main function special case, return type for main is "int". But will assume 0 is being returned when nothing is returned.
+// Annoyingly, functions must be declared before reaching the main function or move definition of function before main.
+// https://stackoverflow.com/questions/8329103/identifier-not-found-error-on-function-call
+void Test_Function(std::string astring);
+
+/*
+    Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
+    Obviously the entry point (main function).
+    Main function special case, return type for main is "int". But will assume 0 is being returned when nothing is returned.
+*/
 int main()
 {
-    // Write to console (Printing).
+    // Write to console (Printing). "See-out".
+    // << == Insertion Operator.
     std::cout << "Hello World!" << std::endl;
+    // Guidelines dictate "\n" is better for efficiency.
     std::cout << "1\n";
     std::cout << "2\n";
-    std::cout << "3\n";
-    std::cout << "\n";
+    std::cout << "3\n\n";
     // Pause program's execution on this line utill we press enter.
     std::cin.get();
     
@@ -31,8 +38,16 @@ int main()
     for (int i = 0; i <= 10; i++)
     {
         std::cout << i << "\n";
-    }
+    };
+    std::cin.get();
+    Test_Function("hello");
     return 0;
+}
+void Test_Function(std::string astring)
+{
+    astring = astring + "123";
+    std::cout << astring << std::endl; 
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

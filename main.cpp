@@ -8,6 +8,7 @@
 // Annoyingly, functions must be declared before reaching the main function or move definition of function before main.
 // https://stackoverflow.com/questions/8329103/identifier-not-found-error-on-function-call
 void Test_Function(std::string astring);
+void Type_Function(bool aswitch);
 
 /*
     Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
@@ -35,12 +36,17 @@ int main()
     std::cout << "\n";
     std::cin.get();
 
+    int x = 1, y = 2, z = 3;
+    const std::string neverchange = "Never change";
+    std::cin.get();
+
     for (int i = 0; i <= 10; i++)
     {
         std::cout << i << "\n";
     };
     std::cin.get();
     Test_Function("hello");
+    Type_Function(true);
     return 0;
 }
 void Test_Function(std::string astring)
@@ -48,6 +54,17 @@ void Test_Function(std::string astring)
     astring = astring + "123";
     std::cout << astring << std::endl; 
 
+}
+void Type_Function(bool aswitch)
+{
+    if (aswitch == true)
+    {
+        double double_num = 10.10;
+        double_num += double_num;
+        char achar = 'a';
+        std::cout << achar << "+" << double_num << "\n\n";
+        std::cout << achar + double_num << "\n\n";
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

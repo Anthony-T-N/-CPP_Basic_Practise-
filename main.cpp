@@ -9,6 +9,7 @@
 // https://stackoverflow.com/questions/8329103/identifier-not-found-error-on-function-call
 void Test_Function(std::string astring);
 void Type_Function(bool aswitch);
+void User_Input_Function();
 
 /*
     Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
@@ -47,6 +48,7 @@ int main()
     std::cin.get();
     Test_Function("hello");
     Type_Function(true);
+    User_Input_Function();
     return 0;
 }
 void Test_Function(std::string astring)
@@ -64,6 +66,26 @@ void Type_Function(bool aswitch)
         char achar = 'a';
         std::cout << achar << "+" << double_num << "\n\n";
         std::cout << achar + double_num << "\n\n";
+    }
+}
+void User_Input_Function()
+{
+    std::cout << "Please enter something" << "\n";
+    std::string first_input;
+    // "See-in".
+    std::cin >> first_input;
+    std::cout << first_input << "\n";
+
+    int x, y;
+    std::cout << "Enter a number" << "\n";
+    std::cin >> x;
+    std::cout << "Enter a 2nd number" << "\n";
+    std::cin >> y;
+    int num_switch = (x < y);
+    std::cout << num_switch << "\n";
+    if (num_switch == 0)
+    {
+        std::cout << "The 2nd number is not greater than the 1st number" << "\n";
     }
 }
 

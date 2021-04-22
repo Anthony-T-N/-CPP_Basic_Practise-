@@ -10,6 +10,7 @@
 void Test_Function(std::string astring);
 void Type_Function(bool aswitch);
 void User_Input_Function();
+void While_Loops(double limit);
 
 /*
     Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
@@ -49,6 +50,10 @@ int main()
     Test_Function("hello");
     Type_Function(true);
     User_Input_Function();
+    double limit = 0;
+    std::cout << "Height of poorly created right angle triangle:" << "\n";
+    std::cin >> limit;
+    While_Loops(limit);
     return 0;
 }
 void Test_Function(std::string astring)
@@ -70,6 +75,13 @@ void Type_Function(bool aswitch)
 }
 void User_Input_Function()
 {
+    std::cout << "Contiune ?" << "\n";
+    std::string option = "";
+    std::cin >> option;
+    if (option == "n")
+    {
+        return;
+    }
     std::cout << "Please enter something" << "\n";
     std::string first_input;
     // "See-in".
@@ -86,6 +98,28 @@ void User_Input_Function()
     if (num_switch == 0)
     {
         std::cout << "The 2nd number is not greater than the 1st number" << "\n";
+    }
+    else if (num_switch == 1)
+    {
+        std::cout << "The 2nd number is greater than the 1st number" << "\n";
+    }
+    else
+    {
+        std::cout << "Other" << "\n";
+    }
+}
+
+void While_Loops(double limit)
+{
+    double x = 0;
+    while (x <= limit)
+    {
+        for (int i = 0; i <= x; i++)
+        {
+            std::cout << "X";
+        }
+        std::cout << "\n";
+        x++;
     }
 }
 

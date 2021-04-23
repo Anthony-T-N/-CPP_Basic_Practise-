@@ -11,6 +11,7 @@ void Test_Function(std::string astring);
 void Type_Function(bool aswitch);
 void User_Input_Function();
 void While_Loops(double limit);
+void Arrays();
 
 /*
     Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
@@ -54,6 +55,7 @@ int main()
     std::cout << "Height of poorly created right angle triangle:" << "\n";
     std::cin >> limit;
     While_Loops(limit);
+    Arrays();
     return 0;
 }
 void Test_Function(std::string astring)
@@ -120,6 +122,21 @@ void While_Loops(double limit)
         }
         std::cout << "\n";
         x++;
+    }
+}
+
+void Arrays()
+{
+    std::string phonetic[7] = { "alpha", "beta", "charlie", "delta", "foxtrot", "golf", "hotel" };
+    std::cout << phonetic[6] << "\n";
+    std::cout << phonetic[3] << "\n";
+    std::cout << "Select a number between 0 and 6" << "\n";
+    int index = 0;
+    std::cin >> index;
+    std::cout << phonetic[index];
+    for (int i = 0; i <= sizeof(phonetic) / sizeof(phonetic[0]) - 1; i++)
+    {
+        std::cout << phonetic[i] << "\n";
     }
 }
 

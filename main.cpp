@@ -4,6 +4,7 @@
 // Used for Input/output.
 // Preprocessor statement, occures before compilation.
 #include <iostream>
+#include <string>
 
 // Annoyingly, functions must be declared before reaching the main function or move definition of function before main.
 // https://stackoverflow.com/questions/8329103/identifier-not-found-error-on-function-call
@@ -128,16 +129,34 @@ void While_Loops(double limit)
 void Arrays()
 {
     std::string phonetic[7] = { "alpha", "beta", "charlie", "delta", "foxtrot", "golf", "hotel" };
+    // Arrays not directly assignable. Example: Can't new_array = old_array 
+    // Recommendation to use std::vectors.
+    std::string backup_phonetic[sizeof(phonetic) / sizeof(phonetic[0])];
+    std::cout << "Duplicating array" << "\n\n";
+    for (int i = 0; i <= sizeof(backup_phonetic) / sizeof(backup_phonetic[0]) - 1; i++)
+    {
+        backup_phonetic[i] = phonetic[i];
+        std::cout << backup_phonetic[i] << "\n";
+    }
     std::cout << phonetic[6] << "\n";
     std::cout << phonetic[3] << "\n";
     std::cout << "Select a number between 0 and 6" << "\n";
     int index = 0;
     std::cin >> index;
-    std::cout << phonetic[index];
+    std::cout << phonetic[index] << "\n";
     for (int i = 0; i <= sizeof(phonetic) / sizeof(phonetic[0]) - 1; i++)
     {
         std::cout << phonetic[i] << "\n";
     }
+    std::cout << "\n";
+    for (int i = 0; i <= sizeof(phonetic) / sizeof(phonetic[0]) - 1; i++)
+    {
+        // "to_string" requires "#include <string>"
+        phonetic[i] = std::to_string(i);
+        std::cout << phonetic[i] << "\n";
+    }
+    std::string new_phonetic[sizeof(phonetic) / sizeof(phonetic[0]) + sizeof(backup_phonetic) / sizeof(backup_phonetic[0])];
+    std::cout << sizeof(new_phonetic) / sizeof(new_phonetic[0]);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

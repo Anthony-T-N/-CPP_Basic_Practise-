@@ -153,10 +153,26 @@ void Arrays()
     {
         // "to_string" requires "#include <string>"
         phonetic[i] = std::to_string(i);
-        std::cout << phonetic[i] << "\n";
+        std::cout << phonetic[i] << "\n\n";
     }
     std::string new_phonetic[sizeof(phonetic) / sizeof(phonetic[0]) + sizeof(backup_phonetic) / sizeof(backup_phonetic[0])];
-    std::cout << sizeof(new_phonetic) / sizeof(new_phonetic[0]);
+    std::cout << sizeof(new_phonetic) / sizeof(new_phonetic[0]) << "\n";
+    int temp = 0;
+    for (int i = 0; i <= sizeof(backup_phonetic) / sizeof(backup_phonetic[0]) - 1; i++)
+    {
+        new_phonetic[i] = backup_phonetic[i];
+        temp = i;
+    }
+    for (int i = 0; i <= sizeof(phonetic) / sizeof(phonetic[0]) - 1; i++)
+    {
+        new_phonetic[temp + i] = phonetic[i];
+    }
+    std::cout << "FINAL" << "\n";
+    for (int i = 0; i <= sizeof(new_phonetic) / sizeof(new_phonetic[0]) - 1; i++)
+    {
+        std::cout << new_phonetic[i] << "\n";
+    }
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

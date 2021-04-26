@@ -13,6 +13,8 @@ void Type_Function(bool aswitch);
 void User_Input_Function();
 void While_Loops(double limit);
 void Arrays();
+void References();
+void Memory_Address();
 
 /*
     Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
@@ -57,6 +59,8 @@ int main()
     std::cin >> limit;
     While_Loops(limit);
     Arrays();
+    References();
+    Memory_Address();
     return 0;
 }
 void Test_Function(std::string astring)
@@ -167,12 +171,32 @@ void Arrays()
     {
         new_phonetic[temp + i] = phonetic[i];
     }
-    std::cout << "FINAL" << "\n";
+    std::cout << "Final Array" << "\n";
     for (int i = 0; i <= sizeof(new_phonetic) / sizeof(new_phonetic[0]) - 1; i++)
     {
         std::cout << new_phonetic[i] << "\n";
     }
 
+}
+
+void References()
+{
+    std::cout << "References" << "\n";
+    std::string three_letters = "abc";
+    std::cin >> three_letters;
+    std::string &abc = three_letters;
+    std::cout << three_letters << "\n";
+    std::cout << abc << "\n\n";
+}
+
+void Memory_Address()
+{
+    std::string slot_1 = "Alpha";
+    std::string slot_2 = "Beta";
+    std::string slot_3 = "Charlie";
+    std::cout << &slot_1;
+    std::cout << &slot_2;
+    std::cout << &slot_3;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

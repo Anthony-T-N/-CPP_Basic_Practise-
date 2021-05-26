@@ -8,13 +8,13 @@
 
 // Annoyingly, functions must be declared before reaching the main function or move definition of function before main.
 // https://stackoverflow.com/questions/8329103/identifier-not-found-error-on-function-call
-void Test_Function(std::string astring);
-void Type_Function(bool aswitch);
-void User_Input_Function();
-void While_Loops(double limit);
-void Arrays();
-void References();
-void Memory_Address();
+void test_function(std::string astring);
+void type_function(bool aswitch);
+void user_input_function();
+void while_loops(double limit);
+void arrays();
+void references();
+void memory_address();
 
 /*
     Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
@@ -51,25 +51,25 @@ int main()
         std::cout << i << "\n";
     };
     std::cin.get();
-    Test_Function("hello");
-    Type_Function(true);
-    User_Input_Function();
+    test_function("hello");
+    type_function(true);
+    user_input_function();
     double limit = 0;
     std::cout << "Height of poorly created right angle triangle:" << "\n";
     std::cin >> limit;
-    While_Loops(limit);
-    Arrays();
-    References();
-    Memory_Address();
+    while_loops(limit);
+    arrays();
+    references();
+    memory_address();
     return 0;
 }
-void Test_Function(std::string astring)
+void test_function(std::string astring)
 {
     astring = astring + "123";
     std::cout << astring << std::endl; 
 
 }
-void Type_Function(bool aswitch)
+void type_function(bool aswitch)
 {
     if (aswitch == true)
     {
@@ -80,7 +80,7 @@ void Type_Function(bool aswitch)
         std::cout << achar + double_num << "\n\n";
     }
 }
-void User_Input_Function()
+void user_input_function()
 {
     std::cout << "Contiune ?" << "\n";
     std::string option = "";
@@ -116,7 +116,7 @@ void User_Input_Function()
     }
 }
 
-void While_Loops(double limit)
+void while_loops(double limit)
 {
     double x = 0;
     while (x <= limit)
@@ -130,7 +130,7 @@ void While_Loops(double limit)
     }
 }
 
-void Arrays()
+void arrays()
 {
     std::string phonetic[7] = { "alpha", "beta", "charlie", "delta", "foxtrot", "golf", "hotel" };
     // Arrays not directly assignable. Example: Can't new_array = old_array 
@@ -179,7 +179,13 @@ void Arrays()
 
 }
 
-void References()
+void references_control(std::string &control_variable)
+{
+    std::cout << "References_control" << "\n";
+    control_variable = "Hello";
+}
+
+void references()
 {
     std::cout << "References" << "\n";
     std::string three_letters = "abc";
@@ -187,25 +193,19 @@ void References()
     std::string &abc = three_letters;
     std::cout << three_letters << "\n";
     std::cout << abc << "\n\n";
+
+    std::string self = "12345";
+    references_control(self);
+    std::cout << self << "\n\n";
+
 }
 
-void Memory_Address()
+void memory_address()
 {
     std::string slot_1 = "Alpha";
     std::string slot_2 = "Beta";
     std::string slot_3 = "Charlie";
-    std::cout << &slot_1;
-    std::cout << &slot_2;
-    std::cout << &slot_3;
+    std::cout << &slot_1 << "\n";
+    std::cout << &slot_2 << "\n";
+    std::cout << &slot_3 << "\n";
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

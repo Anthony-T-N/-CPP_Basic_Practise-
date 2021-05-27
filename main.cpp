@@ -189,19 +189,23 @@ void references()
 {
     std::cout << "References" << "\n";
     std::string three_letters = "abc";
-    std::cin >> three_letters;
     std::string &abc = three_letters;
-    std::cout << three_letters << "\n";
-    std::cout << abc << "\n\n";
+    std::cout << "1) " << three_letters << "\n";
+    std::cout << "2) " << abc << "\n\n";
 
     std::string self = "12345";
     references_control(self);
     std::cout << self << "\n\n";
 
+    std::cout << "Phrase 2" << "\n\n";
+    references_control(abc);
+    std::cout << "4) " << three_letters << "\n";
+    std::cout << "5) " << abc << "\n\n";
 }
 
 void memory_address()
 {
+    std::cout << "memory_address" << "\n\n";
     std::string slot_1 = "Alpha";
     std::string slot_2 = "Beta";
     std::string slot_3 = "Charlie";

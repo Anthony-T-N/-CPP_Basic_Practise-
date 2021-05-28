@@ -15,6 +15,7 @@ void while_loops(double limit);
 void arrays();
 void references();
 void memory_address();
+void typedef_declarations();
 
 /*
     Renamed cpp file in "Source Files" from -CPP_Basic_Practise-.cpp to main.cpp
@@ -50,6 +51,8 @@ int main()
     {
         std::cout << i << "\n";
     };
+    typedef_declarations();
+    return 0;
     std::cin.get();
     test_function("hello");
     type_function(true);
@@ -212,4 +215,24 @@ void memory_address()
     std::cout << &slot_1 << "\n";
     std::cout << &slot_2 << "\n";
     std::cout << &slot_3 << "\n";
+}
+
+void typedef_declarations()
+{
+    typedef int magic;
+    magic a_number = 12345;
+    std::cout << a_number + 987 << "\n";
+    int two_number = 435346;
+    std::cout << a_number + two_number << "\n";
+
+    typedef bool binary;
+    binary red = true;
+    binary blue = false;
+    if (red == true)
+    {
+        if (blue == false)
+        {
+            std::cout << red << " " << blue << "\n";
+        }
+    }
 }

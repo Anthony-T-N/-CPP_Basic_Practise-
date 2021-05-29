@@ -1,4 +1,4 @@
-// -CPP_Basic_Practise-.cpp : This file contains the 'main' function. Program execution begins and ends there.
+/ -CPP_Basic_Practise-.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 // Used for Input/output.
@@ -235,4 +235,14 @@ void typedef_declarations()
             std::cout << red << " " << blue << "\n";
         }
     }
+}
+
+void enumerated_type()
+{
+    // Set of values. Name values.
+    enum fruits { apple = 20, pear = 25, orange = 30};
+
+    fruits store_one = apple
+        fruits store_two = pear;
+    fruits store_three = orange;
 }

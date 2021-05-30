@@ -1,10 +1,17 @@
-/ -CPP_Basic_Practise-.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// -CPP_Basic_Practise-.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 // Used for Input/output.
 // Preprocessor statement, occures before compilation.
 #include <iostream>
 #include <string>
+
+// Constants / Literals
+// Two ways to define constants:
+#define COLOUR_OF_CAR "Purple";
+const std::string COLOUR_OF_HOUSE = "Blue";
+// Best practise dictates the use of capitalisation for constants.
+// const keyword preferred as they are typed and scoped.
 
 // Annoyingly, functions must be declared before reaching the main function or move definition of function before main.
 // https://stackoverflow.com/questions/8329103/identifier-not-found-error-on-function-call
@@ -242,7 +249,7 @@ void enumerated_type()
     // Set of values. Name values.
     enum fruits { apple = 20, pear = 25, orange = 30};
 
-    fruits store_one = apple
-        fruits store_two = pear;
+    fruits store_one = apple;
+    fruits store_two = pear;
     fruits store_three = orange;
 }

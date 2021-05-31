@@ -73,6 +73,11 @@ int main()
     memory_address();
     return 0;
 }
+
+// Form of function:
+// <return type> <function_name>( parameter )
+// Parameter == placeholder.
+// Value passed to parameter == Argument.
 void test_function(std::string astring)
 {
     astring = astring + "123";
@@ -252,4 +257,11 @@ void enumerated_type()
     fruits store_one = apple;
     fruits store_two = pear;
     fruits store_three = orange;
+}
+
+// "Storage class defines the scope (visibility) and life-time of variables and/or functions"
+void storage_classes()
+{
+    // Register Storage Class: Defines variables that should be stored in a register instead of RAM.
+
 }
